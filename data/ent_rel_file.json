@@ -1,0 +1,26 @@
+{
+    "id": {
+        "None": 0,
+        "Argument": 1,
+        "Relation": 2,
+        "Subject": 3,
+        "Object": 4
+    },
+    "entity": [
+        1,
+        2
+    ],
+    "relation": [
+        3,
+        4
+    ],
+    "symmetric": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "asymmetric": [
+    ],
+    "count": []
+}
