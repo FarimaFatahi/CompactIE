@@ -1,5 +1,5 @@
 # CompactIE
-Source code for ["CompactIE: Compact Facts in Open Information Extraction"](https://aclanthology.org/2022.naacl-main.65/), NAACL2022, which extracts compact facts fro raw input sentences. Our pipelined approach consists of two models, Constituent Extraction and Constituent Linking models. First, Constituent Extraction model extracts the triple slots (constituents) and pass them to Constituent Linking models to link the constituents and form triples.
+Source code for ["CompactIE: Compact Facts in Open Information Extraction"](https://aclanthology.org/2022.naacl-main.65/) which extracts compact facts fro raw input sentences. Our pipelined approach consists of two models, Constituent Extraction and Constituent Linking models. First, Constituent Extraction model extracts the triple slots (constituents) and pass them to Constituent Linking models to link the constituents and form triples.
 <p align="center">
 <img src="https://github.com/FarimaFatahi/CompactIE/blob/main/example.png" width="750">
 </p> 
