@@ -38,7 +38,7 @@ After training and saving the Constituent Extraction and Constituent Linking mod
 python test.py --config_file config.yml
 ```
 ### Pre-trained Models
-Models checkpoint are available in [Zenodo](https://zenodo.org/record/6804440). Download the Constituent Extraction (`ce_model`) model and put in under `save_results/models/constituent/` folder. Download the Constituent Linking (`cl_model`) model and put in under `save_results/models/relation/` folder.
+Models checkpoint are available in [Zenodo](https://zenodo.org/record/6804440). Download the Constituent Extraction (`ce_model`) model and put in under [`save_results/models/constituent/`](https://github.com/FarimaFatahi/CompactIE/tree/master/save_results/models/constituent/)) folder. Download the Constituent Linking (`cl_model`) model and put in under [`save_results/models/relation/`](https://github.com/FarimaFatahi/CompactIE/tree/master/save_results/models/relation/)) folder.
 
 ## Cite
 If you find our code is useful, please cite:
