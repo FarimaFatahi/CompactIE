@@ -1,7 +1,5 @@
 save_dir: save_results/
 data_dir: data/evaluation_data/carb/
-#constituent_model_dir: models/constituent
-#relation_model_dir: models/relation
 
 test_file: carb_test.json
 

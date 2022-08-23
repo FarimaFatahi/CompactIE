@@ -3,11 +3,8 @@ import json
 import os
 import random
 import logging
-import time
-
 import torch
 import numpy as np
-from tqdm import tqdm
 from transformers import BertTokenizer
 
 from models.joint_decoding.joint_decoder import EntRelJointDecoder
@@ -76,25 +73,16 @@ def test(cfg, dataset, ent_model, rel_model):
     rel_model.zero_grad()
 
     all_outputs = []
-    cost_time = 0
-    idx = 0
-    # with tqdm(dataset, unit="batch") as tepoch:
     for _, batch in dataset.get_batch('test', cfg.test_batch_size, None):
-        print("{} processed".format(idx+1))
-        idx += 1
+        # print("{} processed".format(idx+1))
         ent_model.eval()
         rel_model.eval()
         with torch.no_grad():
-            cost_time -= time.time()
             batch_outputs = step(cfg, ent_model, rel_model, batch, dataset.vocab, cfg.device)
-            cost_time += time.time()
         all_outputs.extend(batch_outputs)
 
-    logger.info(f"Cost time: {cost_time}s")
-    logger.info(f"Cost time: {cost_time}s")
     test_output_file = os.path.join(cfg.save_dir, "output_extractions.txt")
     print_extractions_allennlp_format(cfg, all_outputs, test_output_file, dataset.vocab)
-    # print_predictions_for_entity_rel_decoding(all_outputs, test_output_file, dataset.vocab)
 
 
 def main():
@@ -179,14 +167,12 @@ def main():
 
     vocab_ent = Vocabulary.load(cfg.constituent_vocab)
     vocab_rel = Vocabulary.load(cfg.relation_vocab)
-    print("ent vocab: ", cfg.constituent_vocab)
     # separate models for constituent generation and linking
     ent_model = EntRelJointDecoder(cfg=cfg, vocab=vocab_ent, ent_rel_file=ent_rel_file, rel_file=rel_file)
     rel_model = RelDecoder(cfg=cfg, vocab=vocab_rel, ent_rel_file=rel_file)
 
     # main bert-based model
     if os.path.exists(cfg.constituent_model_path):
-        print(cfg.constituent_model_path)
         state_dict = torch.load(open(cfg.constituent_model_path, 'rb'), map_location=lambda storage, loc: storage)
         ent_model.load_state_dict(state_dict)
         print("constituent model loaded")
