@@ -5,12 +5,12 @@
 Firstly, download our benchmark tailored for compact extractions provided [`here`](https://zenodo.org/record/7014032#.YwQQ0OzMJb8) and put it under [`data/OIE2016(processed)`](https://github.com/FarimaFatahi/CompactIE/tree/master/data/OIE2016(processed)).
 Secondly, split out the train, development, test set for the constituent extraction model by running:
 ``` 
-cd constituent_model
+cd OIE2016(processed)/constituent_model
 python process_constituent_data.py
 ```
 Lastly, split out the train, development, test set for the constituent linking model by running:
 ``` 
-cd relation_model
+cd OIE2016(processed)/relation_model
 python process_linking_data.py
 ```
 Note that the data folders for training each model are set to the ones mentioned above.
