@@ -33,7 +33,7 @@ Note that first the data for these models should be provided and processed (as d
 If **OOM** occurs, we suggest that reducing `train_batch_size` and increasing `gradient_accumulation_steps` (`gradient_accumulation_steps` is used to perform *Gradient Accumulation*). 
 
 ## Inference
-After training and saving the Constituent Extraction and Constituent Linking models, test the pipelined CompactIE on evaluation benchmarks. ['Three popular evaluation benchmarks'](https://github.com/FarimaFatahi/CompactIE/tree/master/data/evaluation_data) (BenchIE, CaRB, Wire57) are provided to examine CompactIE's performance.
+After training and saving the Constituent Extraction and Constituent Linking models, test the pipelined CompactIE on evaluation benchmarks. [`Three popular evaluation benchmarks`](https://github.com/FarimaFatahi/CompactIE/tree/master/data/evaluation_data) (BenchIE, CaRB, Wire57) are provided to examine CompactIE's performance.
 
 ```python 
 python test.py --config_file config.yml
