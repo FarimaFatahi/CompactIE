@@ -3,11 +3,7 @@ from collections import defaultdict
 
 def read_conjunctions(cfg):
     conj2sent = dict()
-    file_path = ""
-    if cfg.carb:
-        file_path = 'data/evaluation_data/carb/data/carb_test_conjunctions.txt'
-    elif cfg.wire57 == "wire57":
-        file_path = 'data/evaluation_data/wire57/gold_data/wire57_conjunctions.txt'
+    file_path = cfg.conjunctions_file
 
     with open(file_path, 'r') as fin:
         sent = 1
