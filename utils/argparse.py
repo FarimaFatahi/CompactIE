@@ -45,6 +45,7 @@ class ConfigurationParer():
         self.parser.add('-train_file', '--train_file', type=str, required=False, help='train data file.')
         self.parser.add('-dev_file', '--dev_file', type=str, required=False, help='dev data file.')
         self.parser.add('-test_file', '--test_file', type=str, required=False, help='test data file.')
+        self.parser.add('-conjunction_file', '--conjunction_file', type=str, required=False, help='test conjunctions data file (produced by OpenIE6).')
         self.parser.add('-ent_rel_file', '--ent_rel_file', type=str, required=False, help='entity and relation file.')
         self.parser.add('-rel_file', '--rel_file', type=str, required=False, help='relation only file.')
         self.parser.add('-max_sent_len', '--max_sent_len', type=int, default=200, help='max sentence length.')
