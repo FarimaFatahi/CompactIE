@@ -2,7 +2,7 @@ save_dir: save_results/
 data_dir: data/evaluation_data/carb/
 
 test_file: carb_test.json
-conjunction_file: data/evaluation_data/carb/carb_test_conjunctions.txt
+conjunctions_file: data/evaluation_data/carb/carb_test_conjunctions.txt
 ent_rel_file: data/ent_rel_file.json
 rel_file: data/rel_file.json
 test: True
