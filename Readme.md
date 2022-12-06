@@ -38,6 +38,9 @@ After training and saving the Constituent Extraction and Constituent Linking mod
 ```python 
 python test.py --config_file config.yml
 ```
+
+To test the CompactIE system on a set of sentences, first process those sentences as described [`here`]((https://github.com/FarimaFatahi/CompactIE/tree/master/data/). Then, modify the ``config.yml`` file to refer to the processed sentence file (in .json format) and its conjunction file (in .txt format). Finally, run the above command to produce extractions. 
+
 ### Pre-trained Models
 Models checkpoint are available in [Zenodo](https://zenodo.org/record/6804440). Download the Constituent Extraction (`ce_model`) model and put in under [`save_results/models/constituent/`](https://github.com/FarimaFatahi/CompactIE/tree/master/save_results/models/constituent/) folder. Download the Constituent Linking (`cl_model`) model and put in under [`save_results/models/relation/`](https://github.com/FarimaFatahi/CompactIE/tree/master/save_results/models/relation/) folder.
 
