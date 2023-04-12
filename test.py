@@ -176,12 +176,14 @@ def main():
         state_dict = torch.load(open(cfg.constituent_model_path, 'rb'), map_location=lambda storage, loc: storage)
         ent_model.load_state_dict(state_dict)
         print("constituent model loaded")
+    else:
+        raise FileNotFoundError('Attempted to load the constituent extaction model "{}" but found no model by that name in the path specified.'.format(cfg.constituent_model_path))
     if os.path.exists(cfg.relation_model_path):
         state_dict = torch.load(open(cfg.relation_model_path, 'rb'), map_location=lambda storage, loc: storage)
         rel_model.load_state_dict(state_dict)
         print("linking model loaded")
     else:
-        raise FileNotFoundError
+        raise FileNotFoundError('Attempted to load the constituent linking model "{}" but found no model by that name in the path specified.'.format(cfg.relation_model_path))
     logger.info("Loading best training models successfully for testing.")
 
     if cfg.device > -1:
