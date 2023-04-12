@@ -73,8 +73,8 @@ def test(cfg, dataset, ent_model, rel_model):
     rel_model.zero_grad()
 
     all_outputs = []
-    for _, batch in dataset.get_batch('test', cfg.test_batch_size, None):
-        # print("{} processed".format(idx+1))
+    for idx, batch in dataset.get_batch('test', cfg.test_batch_size, None):
+        print("Processed batch {}".format(idx))
         ent_model.eval()
         rel_model.eval()
         with torch.no_grad():
@@ -83,6 +83,8 @@ def test(cfg, dataset, ent_model, rel_model):
 
     test_output_file = os.path.join(cfg.save_dir, "output_extractions.txt")
     print_extractions_allennlp_format(cfg, all_outputs, test_output_file, dataset.vocab)
+    print("Extraction process completed")
+    print('Saved extractions to "{}"'.format(test_output_file))
 
 
 def main():
