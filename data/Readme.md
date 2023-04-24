@@ -30,5 +30,10 @@ Therefore, to input new test files (`source_file.txt`), produce the conjunction 
 ```
 python process.py --source_file source_file.txt --target_file output.json --conjunctions_file conjunctions.txt
 ```
+### Compactness measurement
+To measure the compactness metrics mentioned in the paper (AL, NCC, RPA), set the `INPUT_FILE` variable inside the following scrip and run it as follows: 
+```
+python compactness_measurements.py
+```
 
 
