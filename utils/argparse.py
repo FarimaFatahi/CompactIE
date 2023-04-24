@@ -239,8 +239,8 @@ class ConfigurationParer():
 
         cfg.constituent_vocab = os.path.join(cfg.constituent_model_dir, "vocabulary.pickle")
         cfg.relation_vocab = os.path.join(cfg.relation_model_dir, "vocabulary.pickle")
-        cfg.constituent_model_path = os.path.join(cfg.constituent_model_dir, 'best_model')
-        cfg.relation_model_path = os.path.join(cfg.relation_model_dir, 'best_model')
+        cfg.constituent_model_path = os.path.join(cfg.constituent_model_dir, 'ce_model')
+        cfg.relation_model_path = os.path.join(cfg.relation_model_dir, 'cl_model')
 
         if "carb" in cfg.test_file:
             cfg.separate_threshold = 1.25
