@@ -29,7 +29,7 @@ def read_conjunctive_sentences(args):
 def get_conj_free_sentence_dicts(sentence, sent_to_conj, sent_id):
     flat_extractions_list = []
     sentence = sentence.replace('\n', '')
-    if sentence in list(sent2conj.keys()):
+    if sentence in list(sent_to_conj.keys()):
         for s in sent_to_conj[sentence]:
             sentence_and_extractions_dict = {
                 "sentence": s + " [unused1] [unused2] [unused3] [unused4] [unused5] [unused6]",
