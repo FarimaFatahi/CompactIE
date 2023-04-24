@@ -26,12 +26,12 @@ To get the final data (json format) for these benchmarks, run:
 
 ### Other files
 Since the schema design of the table filling model does not support conjunctions inside constituents, we use the conjunction module developed by [`OpenIE6`](https://github.com/dair-iitd/openie6) to break sentences into smaller conjunction-free sentences before passing them to the system.
-Therefore, to input new test files (`source_file.txt`), produce the conjunction file (`conjunctions.txt`) and then run:
+Therefore, input new test files (`source_file.txt`), produce the conjunction file (`conjunctions.txt`) and then run:
 ```
 python process.py --source_file source_file.txt --target_file output.json --conjunctions_file conjunctions.txt
 ```
 ### Compactness measurement
-To measure the compactness metrics mentioned in the paper (AL, NCC, RPA), set the `INPUT_FILE` variable inside the following scrip to the test file and run it as follows: 
+To measure the compactness metrics mentioned in the paper (AL, NCC, RPA), set the `INPUT_FILE` variable inside the following scrip to the test file path and run it as follows: 
 ```
 python compactness_measurements.py
 ```
